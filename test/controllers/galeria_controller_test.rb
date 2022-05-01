@@ -17,7 +17,7 @@ class GaleriaControllerTest < ActionDispatch::IntegrationTest
 
   test "should create galerium" do
     assert_difference("Galerium.count") do
-      post galeria_url, params: { galerium: { description: @galerium.description, name: @galerium.name } }
+      post galeria_url, params: { galerium: { data_comemorativa: @galerium.data_comemorativa, description: @galerium.description, title: @galerium.title } }
     end
 
     assert_redirected_to galerium_url(Galerium.last)
@@ -34,7 +34,7 @@ class GaleriaControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update galerium" do
-    patch galerium_url(@galerium), params: { galerium: { description: @galerium.description, name: @galerium.name } }
+    patch galerium_url(@galerium), params: { galerium: { data_comemorativa: @galerium.data_comemorativa, description: @galerium.description, title: @galerium.title } }
     assert_redirected_to galerium_url(@galerium)
   end
 

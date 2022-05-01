@@ -25,7 +25,7 @@ class GaleriaController < ApplicationController
 
     respond_to do |format|
       if @galerium.save
-        format.html { redirect_to galerium_url(@galerium), notice: "Galerium was successfully created." }
+        format.html { redirect_to galerium_url(@galerium), notice: "Galeria criada com sucesso!" }
         format.json { render :show, status: :created, location: @galerium }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -38,7 +38,7 @@ class GaleriaController < ApplicationController
   def update
     respond_to do |format|
       if @galerium.update(galerium_params)
-        format.html { redirect_to galerium_url(@galerium), notice: "Galerium was successfully updated." }
+        format.html { redirect_to galerium_url(@galerium), notice: "Galeria atualizada com sucesso!" }
         format.json { render :show, status: :ok, location: @galerium }
       else
         format.html { render :edit, status: :unprocessable_entity }
@@ -52,7 +52,7 @@ class GaleriaController < ApplicationController
     @galerium.destroy
 
     respond_to do |format|
-      format.html { redirect_to galeria_url, notice: "Galerium was successfully destroyed." }
+      format.html { redirect_to galeria_url, notice: "Galeria excluída com sucesso!" }
       format.json { head :no_content }
     end
   end
@@ -65,6 +65,6 @@ class GaleriaController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def galerium_params
-      params.require(:galerium).permit(:name, :description, image: [])
+      params.require(:galerium).permit(:title, :description, :data_comemorativa, imagens: [])
     end
 end

@@ -1,32 +1,46 @@
-<%= form_with(model: galerium) do |form| %>
-  <% if galerium.errors.any? %>
-    <div style="color: red">
-      <h2><%= pluralize(galerium.errors.count, "error") %> prohibited this galerium from being saved:</h2>
 
-      <ul>
-        <% galerium.errors.each do |error| %>
-          <li><%= error.full_message %></li>
-        <% end %>
-      </ul>
+
+<section class="galerias-form-section">
+  <%= form_with(model: galerium) do |form| %>
+
+    <div class="form-errors-card">
+      <% if galerium.errors.any? %>
+        <div style="color: red">
+          <h2><%= pluralize(galerium.errors.count, "error") %> prohibited this galerium from being saved:</h2>
+
+          <ul>
+            <% galerium.errors.each do |error| %>
+              <li><%= error.full_message %></li>
+            <% end %>
+          </ul>
+        </div>
+      <% end %>
     </div>
-  <% end %>
+    <div class="form-inputs-card">
+        <div class="form-input">
+          <%= form.label :title, class: "input-label" %>
+          <%= form.text_field :title, class:"input-field" %>
+        </div>
 
-  <div>
-    <%= form.label :name, style: "display: block" %>
-    <%= form.text_field :name %>
-  </div>
+        <div class="form-input">
+          <%= form.label :description, class: "input-label" %>
+          <%= form.text_area :description,class:"input-field"  %>
+        </div>
 
-  <div>
-    <%= form.label :description, style: "display: block" %>
-    <%= form.text_area :description %>
-  </div>
+        <div class="form-input">
+          <%= form.label :imagens, class: "input-label" %>
+          <%= form.file_field :imagens, multiple: true, class:"input-field"  %>
+        </div>
 
-  <div>
-    <%= form.label :image, style: "display: block" %>
-    <%= form.file_field :image, multiple: true %>
-  </div>
+        <div class="form-input">
+          <%= form.label :data_comemorativa, class: "input-label" %>
+          <%= form.date_field :data_comemorativa, class:"input-field"  %>
+        </div>
 
-  <div>
-    <%= form.submit %>
-  </div>
-<% end %>
+        <div class="form-input">
+          <%= form.submit%>
+        </div>
+      <% end %>
+    </div>
+</section>
+

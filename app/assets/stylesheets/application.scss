@@ -1,0 +1,257 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS (and SCSS, if configured) file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+h1,
+h2,
+p,
+a,
+button,
+label {
+	font-family: "Averia Sans Libre", cursive;
+	margin: 0;
+	padding: 0;
+}
+
+html {
+	max-width: 1440px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+body {
+	margin: 0;
+	padding: 0;
+	background-color: #f6f7fb;
+}
+
+.header-section {
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	width: 75%;
+	padding-top: 10rem;
+	padding-bottom: 5rem;
+	margin: 2rem auto;
+
+	background-color: white;
+	box-shadow: 0px 16px 30px rgba(167, 170, 220, 0.3);
+	border-radius: 1rem;
+	padding: 1.4rem;
+
+	h1 {
+		color: #3b38b4;
+	}
+
+	.editar {
+		position: absolute;
+		bottom: 10px;
+		right: 10px;
+		padding: 0.7rem;
+		background-color: #fdf365;
+		border-radius: 0.3rem;
+		font-size: 1rem;
+		font-weight: 500;
+		cursor: pointer;
+
+		a {
+			text-decoration: none;
+			color: #3b38b4;
+		}
+		transition: right 0.6s, background-color 0s;
+	}
+
+	.deletar {
+		position: absolute;
+		top: 10px;
+		right: 10px;
+		padding: 0.7rem;
+		background-color: #fd6f65;
+		color: white;
+		border-radius: 0.3rem;
+		border-width: 0;
+		font-size: 1rem;
+		font-weight: 500;
+		cursor: pointer;
+		transition: right 0.6s, background-color 0s;
+	}
+
+	.voltar {
+		position: absolute;
+		top: 10px;
+		left: 10px;
+		padding: 0.7rem;
+		color: white;
+		border-radius: 0.3rem;
+		font-size: 1rem;
+		font-weight: 500;
+		cursor: pointer;
+		transition: left 0.6s, background-color 0s;
+	}
+
+	.editar:hover,
+	.deletar:hover {
+		transition: 0.6s;
+		right: 20px;
+	}
+	.voltar:hover {
+		transition: 0.6s;
+		left: 20px;
+	}
+}
+
+.galerias-section,
+.images-section {
+	margin: 0 auto;
+	width: 75%;
+}
+
+.galerias-list,
+.images-list {
+	flex-wrap: wrap;
+	margin: 0;
+	padding: 0;
+	display: flex;
+	list-style: none;
+	justify-content: space-evenly;
+	gap: 2rem;
+}
+
+.galeria-create-card {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	border-radius: 1rem;
+	border: #ff2c39 solid 1px;
+	padding: 1.4rem;
+	min-width: 225px;
+	min-height: 150px;
+
+	font-size: 1.2rem;
+	font-weight: bold;
+	color: #ff2c39;
+	transition: 0.5s;
+
+	&:hover {
+		transition: 0.5s;
+		background-color: #ff2c39;
+		color: white;
+	}
+}
+
+.galeria-card {
+	background-color: white;
+	box-shadow: 0px 16px 30px rgba(167, 170, 220, 0.3);
+	border-radius: 1rem;
+	padding: 1.4rem;
+	min-width: 225px;
+	min-height: 150px;
+
+	position: relative;
+
+	.galeria-title {
+		font-size: 1.2rem;
+		font-weight: bold;
+		color: #3b38b4;
+
+		a {
+			text-decoration: none;
+			color: #3b38b4;
+		}
+	}
+
+	.galeria-description {
+		font-size: 0.8rem;
+		color: #3b38b4;
+		margin-top: 0.5rem;
+	}
+
+	.galeria-data-comemorativa {
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		right: 0;
+		background-color: #3b38b4;
+		color: white;
+		padding: 0.5rem 1.4rem;
+		border-radius: 0 0 1rem 1rem;
+		text-align: end;
+	}
+}
+
+.image-card {
+	background-color: white;
+	box-shadow: 0px 16px 30px rgba(167, 170, 220, 0.3);
+	border-radius: 1rem;
+	padding: 1.4rem;
+
+	width: 275px;
+	height: 275px;
+
+	.image {
+		width: inherit;
+	}
+}
+
+.galerias-form-section {
+	width: 50%;
+	margin: 0 auto;
+}
+.form-inputs-card {
+	background-color: white;
+	box-shadow: 0px 16px 30px rgba(167, 170, 220, 0.3);
+	border-radius: 1rem;
+	padding: 1.4rem;
+
+	.form-input {
+		margin: 1rem 1rem;
+		display: flex;
+		flex-direction: column;
+
+		.input-title {
+			font-size: 1.2rem;
+			font-weight: bold;
+			color: #3b38b4;
+		}
+		.input-field {
+			background: #fafafa;
+			border: 1px solid #a7aadc;
+			border-radius: 5px;
+			-moz-box-sizing: border-box;
+			box-sizing: border-box;
+			font-family: "PT Sans", Helvetica, Roboto, Arial, sans-serif;
+			font-size: 14px;
+			padding: 0.65rem;
+			width: 100%;
+		}
+
+		[type="submit"] {
+			font-weight: bold;
+			font-size: 16px;
+			padding: 13px 30px;
+			background-color: #ff5f69;
+			color: white;
+			border-radius: 1rem;
+			border-width: 0;
+			cursor: pointer;
+
+			&:hover {
+				transition: 0.3s;
+				background-color: #ff2c39;
+			}
+		}
+	}
+}

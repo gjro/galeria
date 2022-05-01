@@ -14,8 +14,9 @@ class GaleriaTest < ApplicationSystemTestCase
     visit galeria_url
     click_on "New galerium"
 
+    fill_in "Data comemorativa", with: @galerium.data_comemorativa
     fill_in "Description", with: @galerium.description
-    fill_in "Name", with: @galerium.name
+    fill_in "Title", with: @galerium.title
     click_on "Create Galerium"
 
     assert_text "Galerium was successfully created"
@@ -26,8 +27,9 @@ class GaleriaTest < ApplicationSystemTestCase
     visit galerium_url(@galerium)
     click_on "Edit this galerium", match: :first
 
+    fill_in "Data comemorativa", with: @galerium.data_comemorativa
     fill_in "Description", with: @galerium.description
-    fill_in "Name", with: @galerium.name
+    fill_in "Title", with: @galerium.title
     click_on "Update Galerium"
 
     assert_text "Galerium was successfully updated"

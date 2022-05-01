@@ -1,14 +1,21 @@
-<p style="color: green"><%= notice %></p>
+<section id="galerias-header-section" class="header-section">
+  <h1>Todas as suas galerias</h1>
+  <p> Selecione uma e recorde suas datas comemorativas </p>
+</section>
+<section class="galerias-section">
+  <ul class="galerias-list">
+    <% @galeria.each do |galerium| %>
+      <li class="galeria-item">
+        <div class="galeria-card">
+          <h2 class="galeria-title"><%= link_to galerium.title, galerium %></h2>
+          <p class="galeria-description"><%= galerium.description %></p>
+          <p class="galeria-data-comemorativa"><%= galerium.data_comemorativa %></p> 
+        </div>
+      </li>
+    <% end %>
+      <li class="galeria-item">
+          <%= link_to "Criar nova galeria", new_galerium_path, class: "galeria-create-card" %></>
+      </li>
+  </ul>
+</section>
 
-<h1>Galeria</h1>
-
-<div id="galeria">
-  <% @galeria.each do |galerium| %>
-    <%= render galerium %>
-    <p>
-      <%= link_to "Show this galerium", galerium %>
-    </p>
-  <% end %>
-</div>
-
-<%= link_to "New galerium", new_galerium_path %>

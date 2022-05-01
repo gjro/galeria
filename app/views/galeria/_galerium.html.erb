@@ -1,19 +1,22 @@
-<div id="<%= dom_id galerium %>">
-  <p>
-    <strong>Name:</strong>
-    <%= galerium.name %>
-  </p>
+<section id="galeria<%= dom_id galerium %>-header-section" class="header-section">
+  <h1><%= galerium.title %></h1>
+  <p> <%= galerium.description %> </p>
+  <p class=".galeria-data-comemorativa"> <%= galerium.data_comemorativa %> </p>
+  <span class="editar"><%= link_to "Editar", edit_galerium_path(@galerium) %></span>
+  <span class="voltar"><%= link_to "<- Voltar", galeria_path %></span>
+  <%= button_to "Deletar", @galerium, method: :delete, class: "deletar" %>
+  </div>
+</section>
 
-  <p>
-    <strong>Description:</strong>
-    <%= galerium.description %>
-  </p>
-
-  <p>
-    <strong>Image:</strong>
-    <% galerium.image.each do |image| %>
-      <div><%= link_to image.filename, image %></div>
+<section class="images-section">
+  <ul class="images-list">
+    <% galerium.imagens.each do |imagem| %>
+      <li class="image-item">
+          <h1> <%imagem.filename%></h1>
+        <div class="image-card">
+          <img class="image" src="/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBCZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--ec33fcfee19736d52159bc22a62bf30c3dea4cc8/<%=imagem.filename%>"/>
+        </div>
+      </li>
     <% end %>
-  </p>
-
-</div>
+  </ul>
+</section>
