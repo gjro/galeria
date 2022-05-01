@@ -1,0 +1,14 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Galeria</h1>
+
+<div id="galeria">
+  <% @galeria.each do |galerium| %>
+    <%= render galerium %>
+    <p>
+      <%= link_to "Show this galerium", galerium %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "New galerium", new_galerium_path %>

@@ -1,0 +1,19 @@
+<div id="<%= dom_id galerium %>">
+  <p>
+    <strong>Name:</strong>
+    <%= galerium.name %>
+  </p>
+
+  <p>
+    <strong>Description:</strong>
+    <%= galerium.description %>
+  </p>
+
+  <p>
+    <strong>Image:</strong>
+    <% galerium.image.each do |image| %>
+      <div><%= link_to image.filename, image %></div>
+    <% end %>
+  </p>
+
+</div>
