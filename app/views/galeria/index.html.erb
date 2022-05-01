@@ -9,7 +9,7 @@
         <div class="galeria-card">
           <h2 class="galeria-title"><%= link_to galerium.title, galerium %></h2>
           <p class="galeria-description"><%= galerium.description %></p>
-          <p class="galeria-data-comemorativa"><%= galerium.data_comemorativa %></p> 
+          <p class="galeria-data-comemorativa"><%= galerium.data_comemorativa.strftime("%d/%m/%Y") %></p> 
         </div>
       </li>
     <% end %>

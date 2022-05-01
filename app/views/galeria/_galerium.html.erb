@@ -1,7 +1,7 @@
-<section id="galeria<%= dom_id galerium %>-header-section" class="header-section">
+<section id="<%= dom_id galerium %>-header-section" class="header-section">
   <h1><%= galerium.title %></h1>
   <p> <%= galerium.description %> </p>
-  <p class=".galeria-data-comemorativa"> <%= galerium.data_comemorativa %> </p>
+  <p class=".galeria-data-comemorativa-header"> <%= galerium.data_comemorativa.strftime("%d/%m/%Y") %> </p>
   <span class="editar"><%= link_to "Editar", edit_galerium_path(@galerium) %></span>
   <span class="voltar"><%= link_to "<- Voltar", galeria_path %></span>
   <%= button_to "Deletar", @galerium, method: :delete, class: "deletar" %>

@@ -1,7 +1,7 @@
 <section id="galeria<%= dom_id @galerium %>-header-section" class="header-section">
   <h1>Editando <%= @galerium.title %></h1>
   <p> <%= @galerium.description %> </p>
-  <p class=".galeria-data-comemorativa"> <%= @galerium.data_comemorativa %> </p>
+  <p class=".galeria-data-comemorativa-header"> <%= @galerium.data_comemorativa.strftime("%d/%m/%Y") %> </p>
   <span class="voltar"><%= link_to "<- Voltar", @galerium %></span>
   </div>
 </section>
