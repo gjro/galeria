@@ -147,10 +147,9 @@ body {
 	font-size: 1.2rem;
 	font-weight: bold;
 	color: #ff2c39;
-	transition: 0.5s;
 
 	&:hover {
-		transition: 0.5s;
+		transition: 0.3s;
 		background-color: #ff2c39;
 		color: white;
 	}
@@ -214,11 +213,29 @@ body {
 	width: 50%;
 	margin: 0 auto;
 }
+
+.form-errors-card {
+	background-color: white;
+	box-shadow: 0px 16px 30px rgba(167, 170, 220, 0.3);
+	border-radius: 1rem;
+	padding: 1.4rem;
+	margin: 1rem 0;
+}
+
+.slideInFromBottom {
+	animation: slideInFromBottom 0.5s;
+}
+
+.notAnimate {
+	animation: none;
+}
+
 .form-inputs-card {
 	background-color: white;
 	box-shadow: 0px 16px 30px rgba(167, 170, 220, 0.3);
 	border-radius: 1rem;
 	padding: 1.4rem;
+	margin: 1rem 0;
 
 	.form-input {
 		margin: 1rem 1rem;
@@ -257,5 +274,23 @@ body {
 				background-color: #ff2c39;
 			}
 		}
+	}
+}
+
+@keyframes fadeIn {
+	from {
+		opacity: 0;
+	}
+	to {
+		opacity: 1;
+	}
+}
+
+@keyframes slideInFromBottom {
+	0% {
+		transform: translateY(100%);
+	}
+	100% {
+		transform: translateY(0);
 	}
 }

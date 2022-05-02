@@ -3,9 +3,9 @@
   <p> Selecione uma e recorde suas datas comemorativas </p>
 </section>
 <section class="galerias-section">
-  <ul class="galerias-list">
+  <ul class="galerias-list slideInFromBottom">
     <% @galeria.each do |galerium| %>
-      <li class="galeria-item">
+      <li class="galeria-item ">
         <div class="galeria-card">
           <h2 class="galeria-title"><%= link_to galerium.title, galerium %></h2>
           <p class="galeria-description"><%= galerium.description %></p>
