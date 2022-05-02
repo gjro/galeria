@@ -2,7 +2,7 @@
   <%= form_with(model: galerium) do |form| %>
     <div class="form-inputs-card <%=galerium.errors.count == 0 ? "slideInFromBottom" : "notAnimate"%>">
         <div class="form-input">
-        <p class="form-error-message"><%= galerium.errors.count > 0 ? "Os campos sinalizados não podem estar em branco!" : ""%></p>
+        <p class="form-error-message"><%= galerium.errors.count > 0 ? "Os campos sinalizados não podem estar em branco e não podem ser anexadas mais de 20 imagens!" : ""%></p>
           <%= form.label :title, "Título:", class: "input-label" %>
           <%= form.text_field :title, class: galerium.errors.where(:title) != [] ? "input-field error" : "input-field" %>
         </div>
@@ -14,7 +14,8 @@
 
         <div class="form-input">
           <%= form.label :imagens,"Imagens:", class: "input-label" %>
-          <%= form.file_field :imagens, multiple: true, class: galerium.errors.where(:imagens) != [] ? "input-field error" : "input-field"  %>
+          <%= form.file_field :imagens, multiple: true, class: galerium.errors.where(:imagens) != [] ? "input-field error" : "input-field", value: "oi"%>
+          
         </div>
 
         <div class="form-input">

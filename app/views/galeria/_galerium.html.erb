@@ -3,7 +3,7 @@
   <p> <%= galerium.description %> </p>
   <p class=".galeria-data-comemorativa-header"> <%= galerium.data_comemorativa.strftime("%d/%m/%Y") %> </p>
   <span class="editar"><%= link_to "Editar", edit_galerium_path(@galerium) %></span>
-  <span class="voltar"><%= link_to "<- Voltar", galeria_path %></span>
+  <span class="voltar"><%= link_to "<- Voltar", root_path %></span>
   <%= button_to "Deletar", @galerium, method: :delete, class: "deletar" %>
   </div>
 </section>
@@ -14,7 +14,7 @@
       <li class="image-item slideInFromBottom">
           <h1> <%imagem.filename%></h1>
         <div class="image-card">
-          <img class="image" src="/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBCZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--ec33fcfee19736d52159bc22a62bf30c3dea4cc8/<%=imagem.filename%>"/>
+          <img class="image" src="<%= url_for(imagem)%>"/>
         </div>
       </li>
     <% end %>
