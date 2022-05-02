@@ -1,6 +1,6 @@
 <section id="galerias-header-section" class="header-section">
   <h1>Todas as suas galerias</h1>
-  <p> Selecione uma e recorde suas datas comemorativas </p>
+  <p><%= @galeria.count != 0 ? "Selecione uma e recorde suas datas comemorativas" : "Crie sua primeira galeria e armazene suas datas comemorativas!"%>
 </section>
 <section class="galerias-section">
   <ul class="galerias-list slideInFromBottom">

@@ -1,38 +1,25 @@
 <section class="galerias-form-section">
   <%= form_with(model: galerium) do |form| %>
-
-    <% if galerium.errors.any? %>
-      <div class="form-errors-card">
-          <div style="color: red">
-            <h2><%=galerium.errors.count == 1 ? "Erro encontrado" : "Erros encontrados"%>. Não foi possível realizar a ação.</h2>
-
-            <ul>
-              <% galerium.errors.each do |error| %>
-                <li><%= error.full_message %></li>
-              <% end %>
-            </ul>
-          </div>
-      </div>
-    <% end %>
-    <div class="form-inputs-card <%=galerium.errors.count == 0 ? "slideInFromBottom" : "notAnimate"%>  <%=galerium.errors.count%>">
+    <div class="form-inputs-card <%=galerium.errors.count == 0 ? "slideInFromBottom" : "notAnimate"%>">
         <div class="form-input">
-          <%= form.label :title, class: "input-label" %>
-          <%= form.text_field :title, class:"input-field" %>
+        <p class="form-error-message"><%= galerium.errors.count > 0 ? "Os campos sinalizados não podem estar em branco!" : ""%></p>
+          <%= form.label :title, "Título:", class: "input-label" %>
+          <%= form.text_field :title, class: galerium.errors.where(:title) != [] ? "input-field error" : "input-field" %>
         </div>
 
         <div class="form-input">
-          <%= form.label :description, class: "input-label" %>
-          <%= form.text_area :description,class:"input-field"  %>
+          <%= form.label :description,"Descrição:" , class: "input-label" %>
+          <%= form.text_area :description,class:galerium.errors.where(:description) != [] ? "input-field error" : "input-field"  %>
         </div>
 
         <div class="form-input">
-          <%= form.label :imagens, class: "input-label" %>
-          <%= form.file_field :imagens, multiple: true, class:"input-field"  %>
+          <%= form.label :imagens,"Imagens:", class: "input-label" %>
+          <%= form.file_field :imagens, multiple: true, class: galerium.errors.where(:imagens) != [] ? "input-field error" : "input-field"  %>
         </div>
 
         <div class="form-input">
-          <%= form.label :data_comemorativa, class: "input-label" %>
-          <%= form.date_field :data_comemorativa, class:"input-field"  %>
+          <%= form.label :data_comemorativa,"Data comemorativa:", class: "input-label" %>
+          <%= form.date_field :data_comemorativa, class: galerium.errors.where(:data_comemorativa) != [] ? "input-field error" : "input-field" %>
         </div>
 
         <div class="form-input">

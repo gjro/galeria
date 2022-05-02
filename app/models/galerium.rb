@@ -1,4 +1,7 @@
 class Galerium < ApplicationRecord
-  validates :title, :description, :imagens, :data_comemorativa, presence: true;
+  validates :title, presence: true;
+  validates :description, presence: true;
+  validates :imagens, presence: true, length: { maximum: 20 };
+  validates :data_comemorativa, presence: true;
   has_many_attached :imagens
 end
